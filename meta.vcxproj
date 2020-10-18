@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profiling|x64">
+      <Configuration>Profiling</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="cmake\module\utils.cmake" />
+    <None Include="conan\conanfile.py" />
+    <None Include="LICENSE" />
+    <None Include="PreLoad.cmake" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\meta\cpuclock.h" />
+    <ClInclude Include="src\meta\pattern\alias.h" />
+    <ClInclude Include="src\meta\preprocessor\cat.h" />
+    <ClInclude Include="src\meta\stopwatch.h" />
+    <ClInclude Include="src\meta\utility\print.h" />
+    <ClInclude Include="TODO" />
+    <ClInclude Include="src\RcppUtils\fwd\eigen.h" />
+    <ClInclude Include="src\RcppUtils\eigen.h" />
+    <ClInclude Include="src\RcppUtils\nanotime.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+    <Text Include="cmake\CMakeLists.txt" />
+    <Text Include="src\meta\CMakeLists.txt" />
+    <Text Include="src\RcppUtils\CMakeLists.txt" />
+    <Text Include="tests\CMakeLists.txt" />
+    <Text Include="tests\cpuclock\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tests\cpuclock\main.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C9E1E599-6CD6-437A-B651-B74804F44340}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>meta</RootNamespace>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{FC1A4D80-50E9-41DA-9192-61C0DBAA00D2}</LinuxProjectType>
+    <!--the two custom variables of the project which are not showing up in the GUI-->
+    <kProjectPath>/meta</kProjectPath>
+    <ProjectName>meta</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+    <RemoteRootDir>git/meta</RemoteRootDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+    <RemoteRootDir>git/meta</RemoteRootDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+    <RemoteRootDir>git/meta</RemoteRootDir>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(GIT_ROOT)\utils\visualstudio\cmake-home-v3.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <RemoteProjectDir>git/otos/$(Configuration)</RemoteProjectDir>
+    <LocalRemoteCopySources>false</LocalRemoteCopySources>
+    <BuildCommandLine>$(R_DEFAULT_BUILD)</BuildCommandLine>
+    <CleanCommandLine>$(R_DEFAULT_CLEANUP)</CleanCommandLine>
+    <RemotePreBuildEventUseInBuild>false</RemotePreBuildEventUseInBuild>
+    <RemotePostBuildEventUseInBuild>false</RemotePostBuildEventUseInBuild>
+    <NMakePreprocessorDefinitions>__GNUC__=8;REFACTORING_CALCULATOR;LZ4_DEPRECATED;RUBEDO_DEBUG;DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>C:\anaconda\include;$(ProjectDir)src;$(CONAN_DATA)\fftw\3.3.8\jvermosen\stable\package\515dcf91fe5be2f47f00fa43921914a5c987423f\include;$(CONAN_DATA)\eigen\3.3.5\jvermosen\stable\package\bc658779672b13ec74b7c9c63c081b9aed8ebce5\include\eigen3;$(CONAN_DATA)\pybind11\2.5.0\jvermosen\stable\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(CONAN_DATA)\rcpp\1.0.4\jvermosen\stable\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(CONAN_DATA)\gtest\1.8.1\jvermosen\stable\package\5ad274d83035c78ba2b205e6cf4f1b317aee8e05\include;C:\.conan\_5mi8kji\1\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <ReBuildCommandLine>
+    </ReBuildCommandLine>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <RemoteProjectDir>git/otos/$(Configuration)</RemoteProjectDir>
+    <LocalRemoteCopySources>false</LocalRemoteCopySources>
+    <BuildCommandLine>$(R_DEFAULT_BUILD)</BuildCommandLine>
+    <CleanCommandLine>$(R_DEFAULT_CLEANUP)</CleanCommandLine>
+    <RemotePreBuildEventUseInBuild>false</RemotePreBuildEventUseInBuild>
+    <RemotePostBuildEventUseInBuild>false</RemotePostBuildEventUseInBuild>
+    <NMakePreprocessorDefinitions>__GNUC__=8;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>C:\anaconda\include;$(ProjectDir)src;$(CONAN_DATA)\fftw\3.3.8\jvermosen\stable\package\515dcf91fe5be2f47f00fa43921914a5c987423f\include;$(CONAN_DATA)\eigen\3.3.5\jvermosen\stable\package\bc658779672b13ec74b7c9c63c081b9aed8ebce5\include\eigen3;$(CONAN_DATA)\pybind11\2.5.0\jvermosen\stable\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(CONAN_DATA)\rcpp\1.0.4\jvermosen\stable\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(CONAN_DATA)\gtest\1.8.1\jvermosen\stable\package\5ad274d83035c78ba2b205e6cf4f1b317aee8e05\include;C:\.conan\_5mi8kji\1\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <ReBuildCommandLine>
+    </ReBuildCommandLine>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'">
+    <RemoteProjectDir>git/otos/$(Configuration)</RemoteProjectDir>
+    <LocalRemoteCopySources>false</LocalRemoteCopySources>
+    <BuildCommandLine>$(R_DEFAULT_BUILD)</BuildCommandLine>
+    <CleanCommandLine>$(R_DEFAULT_CLEANUP)</CleanCommandLine>
+    <RemotePreBuildEventUseInBuild>false</RemotePreBuildEventUseInBuild>
+    <RemotePostBuildEventUseInBuild>false</RemotePostBuildEventUseInBuild>
+    <NMakePreprocessorDefinitions>__GNUC__=8;RUBEDO_DEBUG;DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>C:\anaconda\include;$(ProjectDir)src;$(CONAN_DATA)\fftw\3.3.8\jvermosen\stable\package\515dcf91fe5be2f47f00fa43921914a5c987423f\include;$(CONAN_DATA)\eigen\3.3.5\jvermosen\stable\package\bc658779672b13ec74b7c9c63c081b9aed8ebce5\include\eigen3;$(CONAN_DATA)\pybind11\2.5.0\jvermosen\stable\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(CONAN_DATA)\rcpp\1.0.4\jvermosen\stable\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(CONAN_DATA)\gtest\1.8.1\jvermosen\stable\package\5ad274d83035c78ba2b205e6cf4f1b317aee8e05\include;C:\.conan\_5mi8kji\1\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <ReBuildCommandLine />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <RemotePreBuildEvent>
+      <Command>
+      </Command>
+    </RemotePreBuildEvent>
+    <PreBuildEvent>
+      <Command>$(R_DEFAULT_PREBUILD)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <RemotePreBuildEvent>
+      <Command>
+      </Command>
+    </RemotePreBuildEvent>
+    <PreBuildEvent>
+      <Command>$(R_DEFAULT_PREBUILD)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|x64'">
+    <RemotePreBuildEvent>
+      <Command>
+      </Command>
+    </RemotePreBuildEvent>
+    <PreBuildEvent>
+      <Command>$(R_DEFAULT_PREBUILD)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
