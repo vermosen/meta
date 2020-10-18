@@ -29,7 +29,7 @@ namespace meta::clock {
 
   // clock position
   enum class position {
-    pre = 0
+      pre  = 0
     , post = 1
   };
 
@@ -64,24 +64,24 @@ namespace meta::clock {
   }
 
   // the clock class
-  template <clock::position Pos>
+  template <position Pos>
   struct cpu;
 
   template <>
   struct cpu<position::pre> : public details::cpu_clock_base<cpu<position::pre>> {
     static rep nowImpl() noexcept {
-      unsigned clock[2] = { 0, 0 };
-      STOPWATCH_PRE(clock[1], clock[0]);
-      return *meta::alias_cast<rep*>(&clock);
+      unsigned counter[2] = { 0, 0 };
+      STOPWATCH_PRE(counter[1], counter[0]);
+      return *meta::alias_cast<rep*>(&counter);
     }
   };
 
   template <>
   struct cpu<position::post> : public details::cpu_clock_base<cpu<position::post>> {
     static rep nowImpl() noexcept {
-      unsigned clock[2] = { 0, 0 };
-      STOPWATCH_POST(clock[1], clock[0]);
-      return *meta::alias_cast<rep*>(&clock);
+      unsigned counter[2] = { 0, 0 };
+      STOPWATCH_POST(counter[1], counter[0]);
+      return *meta::alias_cast<rep*>(&counter);
     }
   };
 }
