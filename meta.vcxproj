@@ -23,6 +23,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\meta\utility\comment.h" />
     <ClInclude Include="src\meta\cpuclock.h" />
     <ClInclude Include="src\meta\pattern\alias.h" />
     <ClInclude Include="src\meta\pattern\factory.h" />
