@@ -25,6 +25,7 @@
   <ItemGroup>
     <ClInclude Include="src\meta\cpuclock.h" />
     <ClInclude Include="src\meta\pattern\alias.h" />
+    <ClInclude Include="src\meta\pattern\factory.h" />
     <ClInclude Include="src\meta\preprocessor\cat.h" />
     <ClInclude Include="src\meta\stopwatch.h" />
     <ClInclude Include="src\meta\utility\print.h" />
@@ -40,9 +41,11 @@
     <Text Include="src\RcppUtils\CMakeLists.txt" />
     <Text Include="tests\CMakeLists.txt" />
     <Text Include="tests\cpuclock\CMakeLists.txt" />
+    <Text Include="tests\factory\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tests\cpuclock\main.cpp" />
+    <ClCompile Include="tests\factory\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C9E1E599-6CD6-437A-B651-B74804F44340}</ProjectGuid>

@@ -25,9 +25,9 @@ namespace details {
       typename L
     , typename R
   >
-  inline L alias_cast(R raw) {
+  inline L alias_cast(R rhs) {
     details::alias_cast_t<L, R> ac; // clear -Werror=strict-aliasing
-    ac.m_right = raw;
+    ac.m_right = rhs;
     return ac.m_left;
   }
 }

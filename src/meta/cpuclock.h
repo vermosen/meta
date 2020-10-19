@@ -17,7 +17,7 @@ namespace meta::clock {
 
 namespace std::chrono {
   basic_ostream<char>& operator<<(
-    basic_ostream<char>& os
+      basic_ostream<char>& os
     , duration<int64_t, ratio<1>> dur) {
 
     os << dur.count();
@@ -37,7 +37,7 @@ namespace meta::clock {
 
     struct cpu_clock_defs {
       using duration = cycle;
-      using rep = duration::rep;   // std::int64_t
+      using rep = duration::rep;            // std::int64_t
       using period = duration::period;
       using time_point = std::chrono::time_point<cpu_clock_defs, duration>;
 
@@ -46,9 +46,9 @@ namespace meta::clock {
     };
 
     std::basic_ostream<char>& operator<<(
-      std::basic_ostream<char>& os
+        std::basic_ostream<char>& os
       , cpu_clock_defs::time_point tm) {
-      os << tm.time_since_epoch();         // here, epoch is the cpu reset time
+      os << tm.time_since_epoch();          // here, epoch is the cpu reset time
       return os;
     }
 

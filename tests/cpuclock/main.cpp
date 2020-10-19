@@ -7,7 +7,7 @@
 
 #include <meta/cpuclock.h>
 
-TEST(top, run) {
+TEST(unittest, cpuclock) {
 
   using duration_t = std::chrono::duration<long, std::ratio<1, 1>>;
 
