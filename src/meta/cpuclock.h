@@ -7,7 +7,7 @@
 #include <iosfwd>
 
 #include <meta/stopwatch.h>
-#include <meta/pattern/alias.h>
+#include <meta/patterns/alias.h>
 
 namespace meta::clock {
 

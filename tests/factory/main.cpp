@@ -1,7 +1,7 @@
 
 #include <gtest/gtest.h>
 
-#include <meta/pattern/factory.h>
+#include <meta/patterns/factory.h>
 
 enum class tickers {
   base = 0

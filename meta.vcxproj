@@ -25,8 +25,8 @@
   <ItemGroup>
     <ClInclude Include="src\meta\utility\comment.h" />
     <ClInclude Include="src\meta\cpuclock.h" />
-    <ClInclude Include="src\meta\pattern\alias.h" />
-    <ClInclude Include="src\meta\pattern\factory.h" />
+    <ClInclude Include="src\meta\patterns\alias.h" />
+    <ClInclude Include="src\meta\patterns\factory.h" />
     <ClInclude Include="src\meta\preprocessor\cat.h" />
     <ClInclude Include="src\meta\stopwatch.h" />
     <ClInclude Include="src\meta\utility\print.h" />
