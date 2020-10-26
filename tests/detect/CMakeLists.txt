@@ -14,9 +14,7 @@ add_executable(
 )
 
 target_link_libraries(${TARGET_NAME}
-	INTERFACE 
 	meta
-	PUBLIC 
 	CONAN_PKG::gtest
 	Threads::Threads
 )
