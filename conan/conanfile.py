@@ -22,11 +22,10 @@ class metaConan(ConanFile):
     def source(self):
         self.run('git clone --recursive %s' % self.url)
 
-    def build_requirements(self):
+    def requirements(self):
         self.requires("gtest/1.8.1@%s/%s" % (self.user, self.channel))
         
     def _configure_cmake(self):
-
         cmake = CMake(self, set_cmake_flags=True)
         
         if self.settings.compiler == 'gcc':
