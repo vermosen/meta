@@ -24,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\meta\concatenate.h" />
+    <ClInclude Include="src\meta\contains.h" />
     <ClInclude Include="src\meta\detect.h" />
     <ClInclude Include="src\meta\filter.h" />
     <ClInclude Include="src\meta\remove.h" />
@@ -45,14 +46,18 @@
     <Text Include="src\meta\CMakeLists.txt" />
     <Text Include="src\RcppUtils\CMakeLists.txt" />
     <Text Include="tests\CMakeLists.txt" />
+    <Text Include="tests\contains\CMakeLists.txt" />
     <Text Include="tests\cpuclock\CMakeLists.txt" />
     <Text Include="tests\detect\CMakeLists.txt" />
     <Text Include="tests\factory\CMakeLists.txt" />
+    <Text Include="tests\filter\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="tests\contains\main.cpp" />
     <ClCompile Include="tests\cpuclock\main.cpp" />
     <ClCompile Include="tests\detect\main.cpp" />
     <ClCompile Include="tests\factory\main.cpp" />
+    <ClCompile Include="tests\filter\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C9E1E599-6CD6-437A-B651-B74804F44340}</ProjectGuid>
