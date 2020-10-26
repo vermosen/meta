@@ -4,7 +4,7 @@
 #include <meta/patterns/factory.h>
 
 enum class tickers {
-  base = 0
+    base      = 0
   , derived_1 = 1
   , derived_2 = 2
 };

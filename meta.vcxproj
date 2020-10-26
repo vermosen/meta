@@ -23,6 +23,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\meta\detect.h" />
     <ClInclude Include="src\meta\utility\comment.h" />
     <ClInclude Include="src\meta\cpuclock.h" />
     <ClInclude Include="src\meta\patterns\alias.h" />
@@ -42,10 +43,12 @@
     <Text Include="src\RcppUtils\CMakeLists.txt" />
     <Text Include="tests\CMakeLists.txt" />
     <Text Include="tests\cpuclock\CMakeLists.txt" />
+    <Text Include="tests\detect\CMakeLists.txt" />
     <Text Include="tests\factory\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tests\cpuclock\main.cpp" />
+    <ClCompile Include="tests\detect\main.cpp" />
     <ClCompile Include="tests\factory\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
