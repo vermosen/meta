@@ -23,7 +23,10 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\meta\concatenate.h" />
     <ClInclude Include="src\meta\detect.h" />
+    <ClInclude Include="src\meta\filter.h" />
+    <ClInclude Include="src\meta\remove.h" />
     <ClInclude Include="src\meta\utility\comment.h" />
     <ClInclude Include="src\meta\cpuclock.h" />
     <ClInclude Include="src\meta\patterns\alias.h" />

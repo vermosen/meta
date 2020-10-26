@@ -35,7 +35,7 @@ namespace details {
     using type = Predicate<Args...>;
   };
 
-} // namespace detail
+} // namespace details
 
   template <template<class...> class Predicate, class... Args>
   struct detect {
