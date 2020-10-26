@@ -4,7 +4,7 @@
 #include <meta/pattern/factory.h>
 
 enum class tickers {
-    base = 0
+  base = 0
   , derived_1 = 1
   , derived_2 = 2
 };
@@ -36,7 +36,7 @@ DEFINE_REGISTER(base_noargs, tickers, tickers::base, base_noargs);
 DEFINE_REGISTER(base_noargs, tickers, tickers::derived_1, derived_1_noargs);
 DEFINE_REGISTER(base_noargs, tickers, tickers::derived_2, derived_2_noargs);
 
-TEST(unittest, factory_noargs) {
+TEST(unittest, meta_factory_noargs) {
 
   auto p1 = meta::factory<base_noargs, tickers>::create_instance(tickers::base);
   auto p2 = meta::factory<base_noargs, tickers>::create_instance(tickers::derived_1);
