@@ -13,10 +13,6 @@ add_executable(
     ${TARGET_SOURCES}
 )
 
-gtest_add_tests(
-	TARGET ${TARGET_NAME}
-)
-
 target_link_libraries(${TARGET_NAME}
 	INTERFACE 
 	meta
@@ -24,3 +20,5 @@ target_link_libraries(${TARGET_NAME}
 	CONAN_PKG::gtest
 	Threads::Threads
 )
+
+add_gtest(TARGET ${TARGET_NAME} BINARY ${TARGET_NAME})
