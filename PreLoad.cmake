@@ -27,7 +27,7 @@
             set(LINKER_EXTRA_FLAG    "-fuse-ld=gold"                CACHE INTERNAL "" FORCE)
             set(R_LOCATION_HINT      "/opt/r40-gcc93"               CACHE INTERNAL "" FORCE)
 
-            set(CONAN_BIN_PATH      "/opt/miniconda/envs/dev/bin"   CACHE INTERNAL "" FORCE)
+            set(CONAN_BIN_PATH      "/opt/miniconda/envs/py38/bin"  CACHE INTERNAL "" FORCE)
 
             set(CONAN_FLAGS ${CONAN_FLAGS} "compiler.version=9.3"       )
             set(CONAN_FLAGS ${CONAN_FLAGS} "cppstd=${CXX_DIALECT}"      )
@@ -48,7 +48,7 @@
             set(LINKER_EXTRA_FLAG    "-fuse-ld=gold"                CACHE INTERNAL "" FORCE)
             set(R_LOCATION_HINT      "/opt/r40-gcc84"               CACHE INTERNAL "" FORCE)
 
-            set(CONAN_BIN_PATH      "/opt/miniconda/envs/dev/bin"   CACHE INTERNAL "" FORCE)
+            set(CONAN_BIN_PATH      "/opt/miniconda/envs/py38/bin"  CACHE INTERNAL "" FORCE)
 
             set(CONAN_FLAGS ${CONAN_FLAGS} "compiler.version=8.4"       )
             set(CONAN_FLAGS ${CONAN_FLAGS} "cppstd=${CXX_DIALECT}"      )

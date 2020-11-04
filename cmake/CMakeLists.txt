@@ -27,7 +27,7 @@ find_conan(
 )
 
 # enable the languages
-enable_language(C CXX CUDA)
+enable_language(C CXX)
 
 # set dialect
 set(CMAKE_CXX_STANDARD ${CXX_DIALECT})
