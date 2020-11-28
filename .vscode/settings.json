@@ -8,5 +8,6 @@
         ".cmake": "cmake"
     },
     "cmake.cacheInit": null,
-    "cmake.buildDirectory": "${workspaceFolder}/${buildType}"
+    "cmake.buildDirectory": "${workspaceFolder}/${buildType}",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }
