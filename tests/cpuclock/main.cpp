@@ -24,6 +24,7 @@ TEST(unittest, cpuclock) {
 
   #ifndef NDEBUG
   // TODO: get cpu frequency at runtime
+  EXPECT_NE(ratio, 0.0);
   //EXPECT_NEAR(diff1.count(), 2.0, 1e-1); // TODO: inspect cpu stats at runtime
   //EXPECT_NEAR(diff2.count(), 2.0, 1e-1); // TODO: inspect cpu stats at runtime
   #else

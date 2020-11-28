@@ -8,7 +8,7 @@
             "name": "(gdb) cpuclock",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/test_cpuclock",
+            "program": "${workspaceFolder}/Debug/bin/test_cpuclock",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
