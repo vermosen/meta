@@ -1,0 +1,12 @@
+{
+    "cmake.configureArgs": [
+        "-DCMAKE_PROFILE=gcc84"
+    ],
+    "cmake.cmakePath": "/opt/gcc84/bin/cmake",
+    "cmake.ctestPath": "/opt/gcc84/bin/ctest",
+    "files.associations": {
+        ".cmake": "cmake"
+    },
+    "cmake.cacheInit": null,
+    "cmake.buildDirectory": "${workspaceFolder}/${buildType}"
+}
