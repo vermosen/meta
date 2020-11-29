@@ -5,12 +5,32 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) cpuclock",
+            "name": "(gdb) test-cpuclock",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Debug/bin/test_cpuclock",
+            "program": "${workspaceFolder}/Debug/bin/test-cpuclock",
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/opt/gcc84/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) test-contains",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Debug/bin/test-contains",
+            "args": [],
+            "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,

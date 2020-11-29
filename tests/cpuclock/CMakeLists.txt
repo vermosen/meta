@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.13)
 
-SET(TARGET_NAME test_cpuclock)
+SET(TARGET_NAME test-cpuclock)
 
 setup_component(TARGET ${TARGET_NAME})
 
