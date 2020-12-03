@@ -6,6 +6,7 @@
 #include <gtest/gtest.h>
 
 #include <meta/clocks/cpu.h>
+#include <meta/clocks/recorder.h>
 
 TEST(unittest, cpu_clock) {
 
@@ -32,8 +33,6 @@ TEST(unittest, cpu_clock) {
   #endif
 }
 
-// static recorder = 
-
 TEST(unittest, clock_add_duration) {
 
   using namespace meta;
@@ -49,8 +48,38 @@ TEST(unittest, clock_add_duration) {
     total += diff;
   }
 
+  #ifndef NDEBUG
   EXPECT_NE(total.count(), 0.0); // should be ~ computer frequency / 100
+  #else
+  EXPECT_EQ(total.count(), 0.0);
+  #endif
 }
+
+TEST(unittest, clock_collect_stats) {
+
+  using namespace meta;
+  using clock_type = std::chrono::system_clock;
+  using recorder_t = meta::clocks::recorder<clock_type>;
+  using duration_t = typename clock_type::duration;
+
+  recorder_t rec;
+  duration_t total(0);
+
+  for (int i = 0; i < 10; i ++) {
+    auto start = clock_type::now();
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    auto diff = clock_type::now() - start;
+    rec.add(diff);
+  }
+
+  std::stringstream ss; ss
+    << rec << std::endl;
+
+  auto res = ss.str();
+
+  EXPECT_EQ(0.0, 0.0); // should be ~ computer frequency / 100
+}
+
 
 int main(int argc, char* argv[]) {
   ::testing::InitGoogleTest(&argc, argv);
