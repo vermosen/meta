@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 3.13)
 
 option(SKIP_CONAN_PACKAGE "skip conan package generation" OFF)
+option(BUILD_TEST         "build test suite" 			   ON)
 
 set(PROJECT_HOME "${CMAKE_CURRENT_LIST_DIR}")
 set(PROJECT_NAME meta CACHE STRING "" FORCE)
@@ -25,7 +26,7 @@ include("${PROJECT_HOME}/cmake/CMakeLists.txt")
 
 set(${PROJECT_NAME_U}_MAJOR_VERSION 0)
 set(${PROJECT_NAME_U}_MINOR_VERSION 1)
-set(${PROJECT_NAME_U}_BUILD_VERSION 7)
+set(${PROJECT_NAME_U}_BUILD_VERSION 8)
 
 set(${PROJECT_NAME_U}_VERSION
   ${${PROJECT_NAME_U}_MAJOR_VERSION}.${${PROJECT_NAME_U}_MINOR_VERSION}.${${PROJECT_NAME_U}_BUILD_VERSION})

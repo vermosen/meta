@@ -9,8 +9,7 @@ file(GLOB_RECURSE TARGET_HEADERS CONFIGURE_DEPENDS "*.h")
 add_library(${TARGET_NAME} INTERFACE)
 
 target_include_directories(
-    ${TARGET_NAME} 
-    INTERFACE ${TARGET_HEADERS}    
+    ${TARGET_NAME} INTERFACE
 )
 
 install_library(
