@@ -9,7 +9,7 @@
 #include <meta/clock.h>
 #include <meta/asm/comment.h>
 #include <meta/asm/stopwatch.h>
-#include <meta/patterns/alias.h>
+#include <meta/patterns/union.h>
 
 namespace meta::clocks {
 
@@ -53,7 +53,7 @@ namespace details      {
       unsigned counter[2] = { 0, 0 };
       STOPWATCH_PRE(counter[1], counter[0]);
       ASM_COMMENT("CPUCLOCK PRE");
-      return time_point_t(duration_t(*meta::alias_cast<rep*>(&counter)));
+      return time_point_t(duration_t(*meta::union_cast<rep*>(&counter)));
     }
   };
 
@@ -63,7 +63,7 @@ namespace details      {
       unsigned counter[2] = { 0, 0 };
       ASM_COMMENT("CPUCLOCK POST");
       STOPWATCH_POST(counter[1], counter[0]);
-      return time_point_t(duration_t(*meta::alias_cast<rep*>(&counter)));
+      return time_point_t(duration_t(*meta::union_cast<rep*>(&counter)));
     }
   };
 
