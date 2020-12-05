@@ -29,6 +29,9 @@ namespace details {
     template <auto Key>
     metric<Clock, Key>& get();
 
+    template <auto Key>
+    const metric<Clock, Key>& get() const;
+
   private:
     fold_t m_fold;
   };
@@ -41,6 +44,12 @@ namespace details {
   template <typename Clock, auto ... Keys>
   template <auto Key>
   metric<Clock, Key>& table<Clock, Keys ...>::get() { 
+    return m_fold.template get<Key>(); 
+  }
+
+  template <typename Clock, auto ... Keys>
+  template <auto Key>
+  const metric<Clock, Key>& table<Clock, Keys ...>::get() const { 
     return m_fold.template get<Key>(); 
   }
   

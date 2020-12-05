@@ -37,6 +37,16 @@ namespace details {
         return fold_enum_impl<Alias, Rest...>::template get<Key>();
       }
     }
+
+    template <auto Key>
+    const Alias<Key>& get() const { 
+      if constexpr (Key == First) {
+        return m_item;
+      } else {
+        return fold_enum_impl<Alias, Rest...>::template get<Key>();
+      }
+    }
+
   private:
     Alias<First> m_item;
   };
@@ -52,9 +62,19 @@ namespace details {
       if constexpr (Key == First) {
         return m_item;
       } else {
-        std::nullopt; // meant to fail to compile (mismatch in type)
+        return std::nullopt; // meant to fail to compile
       }
     }
+
+    template <auto Key>
+    const Alias<Key>& get() const { 
+      if constexpr (Key == First) {
+        return m_item;
+      } else {
+        return std::nullopt; // meant to fail to compile
+      }
+    }
+
   private:
     Alias<First> m_item;
   };
@@ -68,6 +88,11 @@ namespace details {
   public:
     template <auto Key>
     Alias<Key>& get() {
+      return details::fold_enum_impl<Alias, Keys...>::template get<Key>();
+    }
+
+    template <auto Key>
+    const Alias<Key>& get() const {
       return details::fold_enum_impl<Alias, Keys...>::template get<Key>();
     }
   };

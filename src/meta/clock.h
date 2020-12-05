@@ -23,7 +23,7 @@ namespace clocks {
   struct clock : public clocks::details::defs<Impl> {
 
     using time_point_t = typename clocks::details::defs<Impl>::time_point_t;
-    using duration_t   = typename clocks::details::defs<Impl>::duration_t;
+    using duration   = typename clocks::details::defs<Impl>::duration_t;
     static constexpr bool is_steady = traits::is_steady<Impl>::value;
 
     static time_point_t now() noexcept {

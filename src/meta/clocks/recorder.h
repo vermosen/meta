@@ -31,6 +31,11 @@ namespace clocks {
     recorder();
     void push(duration_t dur);
 
+    template <auto Key>
+    duration_t sample() const {
+      return m_table.template get<Key>().sample();
+    }
+
     friend std::ostream& operator << <>(std::ostream&, const recorder<Clock, Keys...>&);
   private:
     table_t m_table;

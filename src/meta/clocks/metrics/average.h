@@ -12,18 +12,21 @@ namespace clocks    {
   public:
     using duration_t = typename Clock::duration;
   public:
+    metric() : m_sum(0), m_count(0) {}
+    
+
     void update(duration_t dur) {
       m_sum += dur;
       m_count++;
     }
 
-    void sample() const {
+    duration_t sample() const {
       return m_sum / m_count;
     }
 
   private:
     duration_t m_sum;
-    std::int64_t m_count = 0;
+    std::int64_t m_count;
   };
 }}
 

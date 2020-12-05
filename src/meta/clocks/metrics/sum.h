@@ -10,14 +10,15 @@ namespace clocks    {
   template <typename Clock>
   class metric<Clock, metrics::type::sum> {
   public:
-    using duration_t = typename Clock::duration;
-  
+    using duration_t = typename Clock::duration;  
+    metric() : m_sum(0) {}
+    
   public:
     void update(duration_t dur) {
       m_sum += dur;
     }
 
-    void sample() const {
+    duration_t sample() const {
       return m_sum;
     }
 
