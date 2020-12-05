@@ -5,6 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(gdb) test-analytics",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Debug/bin/test-analytics",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/opt/gcc84/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
             "name": "(gdb) test-cpuclock",
             "type": "cppdbg",
             "request": "launch",

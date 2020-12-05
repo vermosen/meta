@@ -13,7 +13,7 @@
 
 namespace meta::clocks {
 
-  template <position>
+  template <position=position::post>
   struct cpu;
 }
 

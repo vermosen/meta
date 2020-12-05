@@ -65,10 +65,8 @@ endif()
 
 if(CMAKE_BUILD_TYPE)
     string(TOUPPER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_UC)
-    message(STATUS "info: CMake build type has been set to ${CMAKE_BUILD_TYPE} --")
 else()
     set(CMAKE_BUILD_TYPE_UC "RELEASE")
-    message(STATUS "info: defaulting CMake build type to ${CMAKE_BUILD_TYPE} --")
 endif()
 
 if(CMAKE_BUILD_TYPE_UC STREQUAL "RELEASE")

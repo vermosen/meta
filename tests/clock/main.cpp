@@ -6,6 +6,7 @@
 #include <gtest/gtest.h>
 
 #include <meta/clocks/cpu.h>
+#include <meta/clocks/metrics/all.h>
 #include <meta/clocks/recorder.h>
 
 TEST(unittest, cpu_clock) {
@@ -59,7 +60,7 @@ TEST(unittest, clock_collect_stats) {
 
   using namespace meta;
   using clock_type = std::chrono::system_clock;
-  using recorder_t = meta::clocks::recorder<clock_type>;
+  using recorder_t = meta::clocks::recorder<clock_type, clocks::metrics::type::sum>;
   using duration_t = typename clock_type::duration;
 
   recorder_t rec;
@@ -69,7 +70,7 @@ TEST(unittest, clock_collect_stats) {
     auto start = clock_type::now();
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
     auto diff = clock_type::now() - start;
-    rec.add(diff);
+    rec.push(diff);
   }
 
   std::stringstream ss; ss
@@ -77,7 +78,8 @@ TEST(unittest, clock_collect_stats) {
 
   auto res = ss.str();
 
-  EXPECT_EQ(0.0, 0.0); // should be ~ computer frequency / 100
+  // TODO: get numerical results 
+  EXPECT_EQ(true, true); // should be ~ computer frequency / 100
 }
 
 

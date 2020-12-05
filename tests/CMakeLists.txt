@@ -9,4 +9,6 @@ add_subdirectory(detect)
 add_subdirectory(filter)
 add_subdirectory(factory)
 add_subdirectory(contains)
+add_subdirectory(recorder)
 add_subdirectory(clock)
+

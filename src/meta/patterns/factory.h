@@ -15,7 +15,7 @@ namespace meta {
     *   - Args: the derived classes ctor argument list
     */
   template <
-    typename Base
+      typename Base
     , typename Key
     , typename ... Args
   > class factory {

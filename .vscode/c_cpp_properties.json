@@ -1,0 +1,19 @@
+{
+  "configurations": [
+      {
+          "name": "Linux",
+          "includePath": [
+              "${default}",
+              "/home/vermosen/.conan/data/gtest/1.8.1/jvermosen/stable/package/6cce25ba4c100bc627e64bf86d8b3c8181e4f200/include",
+              "${workspaceFolder}/src"
+          ],
+          "defines": [],
+          "compilerPath": "/opt/gcc84/bin/gcc",
+          "cStandard": "gnu17",
+          "cppStandard": "gnu++17",
+          "intelliSenseMode": "gcc-x64",
+          "configurationProvider": "ms-vscode.cmake-tools"
+      }
+  ],
+  "version": 4
+}
