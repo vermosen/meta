@@ -1,6 +1,6 @@
 #pragma once
-#ifndef META_PATTERN_ALIAS_H
-#define META_PATTERN_ALIAS_H
+#ifndef META_PATTERN_UNION_H
+#define META_PATTERN_UNION_H
 
 namespace meta    {
 namespace details {
@@ -32,4 +32,4 @@ namespace details {
   }
 }
 
-#endif // META_PATTERN_ALIAS_H
+#endif // META_PATTERN_UNION_H
