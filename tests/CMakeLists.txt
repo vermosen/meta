@@ -10,6 +10,7 @@ add_subdirectory(filter)
 add_subdirectory(factory)
 add_subdirectory(contains)
 add_subdirectory(recorder)
+add_subdirectory(lambda)
 add_subdirectory(fold)
 add_subdirectory(clock)
 
