@@ -34,9 +34,11 @@ class metaConan(ConanFile):
             elif self.settings.compiler.version in ['9', '9.3']:
                 cmake.definitions["CMAKE_PROFILE"] = 'gcc93'
             else:
-                self.output.info('compiler %s %s not supported' % 
+                self.output.error('compiler %s %s not supported' % 
                   (self.settings.compiler, self.settings.compiler.version))
         else:
+            self.output.error('compiler %s %s not supported' % 
+                  (self.settings.compiler, self.settings.compiler.version))
             exit(1)
 
         # cannot run conan command inside the build process

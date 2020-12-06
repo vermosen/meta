@@ -7,7 +7,7 @@
 namespace meta {
 
   /*!
-   * folds a collection of enums into some iterable structure
+   * @brief folds a collection of enums into some iterable structure
    */
   template <
       template <auto> typename Alias
@@ -62,7 +62,9 @@ namespace details {
       if constexpr (Key == First) {
         return m_item;
       } else {
-        return std::nullopt; // meant to fail to compile
+        // meant to fail to compile in case a key that 
+        // does not belong to the collection get pulled
+        return std::nullopt;  
       }
     }
 
@@ -71,7 +73,7 @@ namespace details {
       if constexpr (Key == First) {
         return m_item;
       } else {
-        return std::nullopt; // meant to fail to compile
+        return std::nullopt;
       }
     }
 

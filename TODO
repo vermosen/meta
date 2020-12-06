@@ -2,3 +2,4 @@
 - when first run from cmake, the conan package get build before the header get installed
 - make test optional in conan/cmake
 - fix metrics/kurtosis
+- handle parametrized ctors in pattern/fold
