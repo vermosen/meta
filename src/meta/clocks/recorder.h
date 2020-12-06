@@ -32,8 +32,8 @@ namespace clocks {
     void push(duration_t dur);
 
     template <auto Key>
-    duration_t sample() const {
-      return m_table.template get<Key>().sample();
+    duration_t collect() const {
+      return m_table.template get<Key>().collect();
     }
 
     friend std::ostream& operator << <>(std::ostream&, const recorder<Clock, Keys...>&);

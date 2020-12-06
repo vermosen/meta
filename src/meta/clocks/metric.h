@@ -10,8 +10,8 @@ namespace metrics {
       sum      = 1
     , average  = 2
     , stddev   = 3
-    //, skewness = 4
-    //, kurtosis = 5
+    , kurtosis = 4
+    //, skewness = 5
     //, fractile = 6 -> will require parametrized ctor
   };
 }

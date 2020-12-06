@@ -20,7 +20,7 @@ namespace clocks    {
       m_count++;
     }
 
-    duration_t sample() const {
+    duration_t collect() const {
       return m_sum / m_count;
     }
 

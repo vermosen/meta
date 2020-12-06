@@ -18,7 +18,7 @@ namespace clocks    {
       m_sum += dur;
     }
 
-    duration_t sample() const {
+    duration_t collect() const {
       return m_sum;
     }
 
