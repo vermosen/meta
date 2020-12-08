@@ -63,30 +63,6 @@ load_packages(
 message(DEBUG "CONAN_LIBS set to ${CONAN_LIBS}")
 
 #####################################
-#     generate the conan export     #
-#####################################
-
-export_project(
-	NAME ${PROJECT_NAME}
-	NAMESPACE ${PROJECT_NAME}
-	REVISION ${${PROJECT_NAME_U}_VERSION}
-	DIRECTORY cmake/package # for later use
-)
-
-if (SKIP_CONAN_PACKAGE STREQUAL "OFF")
-
-	conan_export(
-		PACKAGE ${PROJECT_NAME}
-		REVISION ${${PROJECT_NAME_U}_VERSION}
-		USER ${CONAN_USER}
-		CHANNEL ${CONAN_CHANNEL}
-		PROFILE ${CONAN_PROFILE}
-		DIRECTORY conan
-	)
-
-endif()
-
-#####################################
 #          add the sources          #
 #####################################
 
@@ -104,3 +80,9 @@ add_subdirectory(src/meta)
 
 include(CTest)
 add_subdirectory(tests)
+
+#####################################
+#     generate the conan export     #
+#####################################
+
+add_subdirectory(conan)
