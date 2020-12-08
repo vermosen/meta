@@ -3,6 +3,7 @@
 #define META_CLOCKS_METRICS_STDDEV_H
 
 #include <cmath>
+#include <array>
 
 #include <meta/clocks/metric.h>
 

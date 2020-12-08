@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.13)
 
 # note: this script is left in a separate file *on purpose*
-# see https://cmake.org/cmake/help/v3.7/command/install.html
+# ref: https://stackoverflow.com/questions/43875499/do-post-processing-after-make-install-in-cmake
 
 #####################################
 #     generate the conan export     #
