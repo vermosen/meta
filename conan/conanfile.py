@@ -18,7 +18,6 @@ class metaConan(ConanFile):
                    '%sTargets-*.cmake' % name]
 
     _source_subfolder = name
-    _build_subfolder = 'build'
     _runbuild = False
 
     def source(self):
@@ -27,9 +26,7 @@ class metaConan(ConanFile):
             # fetch trunk
             self.run('git clone --recursive %s.git' % self.url)
         else:
-            archive = '%s/archive/v%s.tar.gz' % (self.url, self.version)
-            tools.get(archive)
-            shutil.move(glob("meta-*")[0], self._source_subfolder)
+            self.run('git clone --recursive --branch v%s %s.git' % (self.version, self.url))
 
     def requirements(self):
         self.requires("gtest/1.8.1@%s/%s" % (self.user, self.channel))
@@ -52,7 +49,7 @@ class metaConan(ConanFile):
 
         # cannot run conan command inside the build process
         cmake.definitions["SKIP_CONAN_PACKAGE"] = 'ON'
-        cmake.configure(source_folder=self._source_subfolder, build_folder=self._build_subfolder)
+        cmake.configure(source_folder=self._source_subfolder)
         return cmake
 
     def build(self):
