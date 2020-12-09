@@ -34,8 +34,6 @@ if (CMAKE_PROFILE_UC STREQUAL "GCC93")
     set(CONAN_FLAGS ${CONAN_FLAGS} "compiler.libcxx=libstdc++11")
 
     set(CONAN_EXTRA_SETTINGS ${CONAN_FLAGS}                 CACHE INTERNAL "" FORCE)
-    set(CMAKE_GENERATOR	     "Ninja"                        CACHE INTERNAL "" FORCE)
-    set(CMAKE_MAKE_PROGRAM	 "${DEVTOOLS_ROOT}/bin/ninja" 	CACHE INTERNAL "" FORCE)
     set(CONAN_PROFILE        "gcc93"		                CACHE INTERNAL "" FORCE)
 
 elseif(CMAKE_PROFILE_UC STREQUAL "GCC84")
@@ -55,8 +53,6 @@ elseif(CMAKE_PROFILE_UC STREQUAL "GCC84")
     set(CONAN_FLAGS ${CONAN_FLAGS} "compiler.libcxx=libstdc++11")
 
     set(CONAN_EXTRA_SETTINGS ${CONAN_FLAGS}                 CACHE INTERNAL "" FORCE)
-    set(CMAKE_GENERATOR	     "Ninja"                        CACHE INTERNAL "" FORCE)
-    set(CMAKE_MAKE_PROGRAM	 "${DEVTOOLS_ROOT}/bin/ninja" 	CACHE INTERNAL "" FORCE)
     set(CONAN_PROFILE        "gcc84"		                CACHE INTERNAL "" FORCE)
 
 else()

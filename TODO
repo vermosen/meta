@@ -3,3 +3,4 @@
 - make test optional in conan/cmake
 - fix metrics/kurtosis
 - handle parametrized ctors in pattern/fold
+- add tests for clock metrics

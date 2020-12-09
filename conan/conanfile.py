@@ -1,11 +1,13 @@
-import os, sys
+import os, sys, shutil
+from glob import glob
+
 from conans import ConanFile, tools, CMake
 
 class metaConan(ConanFile):
     name = "meta"
     settings = "os", "compiler", "build_type", "arch"
     description = "a C++ metaprogramming lib"
-    url = "https://github.com/vermosen/meta.git"
+    url = "https://github.com/vermosen/meta"
     license = "None"
     author = "vermosen@yahoo.com"
     topics = None
@@ -20,7 +22,14 @@ class metaConan(ConanFile):
     _runbuild = False
 
     def source(self):
-        self.run('git clone --recursive %s' % self.url)
+
+        if self.version == 'dev':
+            # fetch trunk
+            self.run('git clone --recursive %s.git' % self.url)
+        else:
+            archive = '%s/archive/v%s.tar.gz' % (self.url, self.version)
+            tools.get(archive)
+            shutil.move(glob("meta-*")[0], self._source_subfolder)
 
     def requirements(self):
         self.requires("gtest/1.8.1@%s/%s" % (self.user, self.channel))
@@ -43,7 +52,7 @@ class metaConan(ConanFile):
 
         # cannot run conan command inside the build process
         cmake.definitions["SKIP_CONAN_PACKAGE"] = 'ON'
-        cmake.configure(source_folder=self._source_subfolder)
+        cmake.configure(source_folder=self._source_subfolder, build_folder=self._build_subfolder)
         return cmake
 
     def build(self):

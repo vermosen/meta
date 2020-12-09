@@ -1,0 +1,22 @@
+{
+  "buildType": {
+    "default": "Debug",
+      "choices": { 
+        "Debug": {
+          "short": "Debug",
+          "long": "Emit debug information without performing optimizations",
+          "buildType": "Debug"
+        },
+        "Profiling": {
+          "short": "Profiling",
+          "long": "Leaves profiling flags on",
+          "buildType": "Profiling"
+        },
+        "Release": {
+          "short": "Release",
+          "long": "Full release mode - optimized for speed",
+          "buildType": "Release"
+        }    
+      }
+  }
+}
