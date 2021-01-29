@@ -50,7 +50,7 @@ namespace clocks {
   }
 
   template <class Clock, metrics::type ... Keys>
-  inline std::ostream& operator <<(std::ostream& os, const recorder<Clock, Keys...>& o) {
+  inline std::ostream& operator <<(std::ostream& os, const recorder<Clock, Keys...>& /* o */) {
     //os << o.m_table;
     return os;
   }

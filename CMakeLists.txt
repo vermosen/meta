@@ -52,11 +52,11 @@ set(PACKAGES
 
 message(STATUS "package list has been set to ${PACKAGES}")
 
-# imported packages
 load_packages(
 	NAME ${PACKAGES}
-	PROFILE ${CONAN_PROFILE}
-	SETTINGS ${CONAN_EXTRA_SETTINGS}
+	PROFILE ${CMAKE_PROFILE}
+	SETTINGS "${CONAN_EXTRA_SETTINGS};build_type=${CMAKE_BUILD_TYPE}"
+	OPTIONS ""
 	UPDATE
 )
 
