@@ -26,7 +26,7 @@ include("${PROJECT_HOME}/cmake/CMakeLists.txt")
 
 set(${PROJECT_NAME_U}_MAJOR_VERSION  0)
 set(${PROJECT_NAME_U}_MINOR_VERSION  1)
-set(${PROJECT_NAME_U}_BUILD_VERSION 10)
+set(${PROJECT_NAME_U}_BUILD_VERSION 11)
 
 set(${PROJECT_NAME_U}_VERSION
   ${${PROJECT_NAME_U}_MAJOR_VERSION}.${${PROJECT_NAME_U}_MINOR_VERSION}.${${PROJECT_NAME_U}_BUILD_VERSION})
@@ -44,10 +44,12 @@ PROJECT(
 # import thirdparty packages #
 ##############################
 
-set(GTEST_VERS     "1.8.1" )
+set(GTEST_VERS  "1.8.1" )
+set(BOOST_VERS "1.72.0" )
 
 set(PACKAGES
    gtest
+	 boost
 )
 
 message(STATUS "package list has been set to ${PACKAGES}")

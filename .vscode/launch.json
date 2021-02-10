@@ -8,7 +8,7 @@
             "name": "(gdb) test-recorder",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Debug/bin/test-mixins",
+            "program": "${workspaceFolder}/Debug/bin/test-recorder",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
