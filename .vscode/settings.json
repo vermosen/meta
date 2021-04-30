@@ -11,8 +11,7 @@
         "CMAKE_VERBOSE": true
     },
     "cmake.environment": {
-      "PATH": "/opt/miniconda/envs/py38/bin:${env:PATH}",
-
+      "PATH": "/opt/miniconda/envs/py38/bin:${env:PATH}"
     },
     "files.exclude": {
         "bin": true,

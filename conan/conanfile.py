@@ -43,7 +43,7 @@ class metaConan(ConanFile):
                 self.output.error('compiler %s %s not supported' % 
                   (self.settings.compiler, self.settings.compiler.version))
         elif self.settings.compiler == 'clang':
-            if self.settings.compiler.version in ['11']:
+            if self.settings.compiler.version in ['11.0']:
                 cmake.definitions["CONAN_PROFILE"] = 'clang11'
             else:
                 self.output.error('compiler %s %s not supported' % 
