@@ -36,9 +36,15 @@ class metaConan(ConanFile):
         
         if self.settings.compiler == 'gcc':
             if self.settings.compiler.version in ['8', '8.4']:
-                cmake.definitions["CMAKE_PROFILE"] = 'gcc84'
+                cmake.definitions["CONAN_PROFILE"] = 'gcc84'
             elif self.settings.compiler.version in ['9', '9.3']:
-                cmake.definitions["CMAKE_PROFILE"] = 'gcc93'
+                cmake.definitions["CONAN_PROFILE"] = 'gcc93'
+            else:
+                self.output.error('compiler %s %s not supported' % 
+                  (self.settings.compiler, self.settings.compiler.version))
+        elif self.settings.compiler == 'clang':
+            if self.settings.compiler.version in ['11']:
+                cmake.definitions["CONAN_PROFILE"] = 'clang11'
             else:
                 self.output.error('compiler %s %s not supported' % 
                   (self.settings.compiler, self.settings.compiler.version))

@@ -16,7 +16,7 @@
 
 
 #define META_FOR_EACH_DECLARE_PAIR(X, SEQ)                      \
-	BOOST_PP_SEQ_FOR_EACH_I(META_DECLARE_PAIR                     \
+	BOOST_PP_SEQ_FOR_EACH_I(META_DECLARE_PAIR                   \
         , X, META_SEQ_DOUBLE_PARENS(SEQ))
 
 #endif // META_PREPROCESSOR_PAIR_H

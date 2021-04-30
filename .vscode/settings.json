@@ -1,13 +1,18 @@
 {
-    "cmake.configureArgs": [
-        "-DCMAKE_PROFILE=gcc84"
-    ],
+    "cmake.configureArgs": [],
     "cmake.buildDirectory": "${workspaceFolder}/${buildType}",
     "cmake.buildTask": false,
+    "cmake.configureSettings": { 
+        "CMAKE_INSTALL_PREFIX": "${workspaceFolder}",
+        "PYTHON_LOCATION_HINT": "/opt/miniconda/envs/py38/bin",
+        "CONAN_BIN_PATH": "/opt/miniconda/envs/py38/bin",
+        "CONAN_CHANNEL": "stable",
+        "CONAN_USERNAME": "jvermosen",
+        "CMAKE_VERBOSE": true
+    },
     "cmake.environment": {
       "PATH": "/opt/miniconda/envs/py38/bin:${env:PATH}",
-      "CONAN_CHANNEL": "stable",
-      "CONAN_USERNAME": "jvermosen"
+
     },
     "files.exclude": {
         "bin": true,

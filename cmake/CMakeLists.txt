@@ -29,6 +29,8 @@ find_conan(
 # enable the languages
 enable_language(C CXX)
 
+set(CXX_DIALECT "17")
+
 # set dialect
 set(CMAKE_CXX_STANDARD ${CXX_DIALECT})
 
