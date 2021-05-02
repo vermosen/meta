@@ -1,6 +1,1 @@
-- cpuclock: create a test to figure out how cpu interrupt are handled
-- when first run from cmake, the conan package get build before the header get installed
-- make test optional in conan/cmake
-- fix metrics/kurtosis
-- handle parametrized ctors in pattern/fold
-- add tests for clock metrics
+- investigate why cmake config and target files are not generated

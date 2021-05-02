@@ -37,6 +37,7 @@ set(CMAKE_CXX_STANDARD ${CXX_DIALECT})
 # set verbosity
 if(VERBOSE)
     set(CMAKE_VERBOSE_MAKEFILE ON)
+    set(VERBOSE ON CACHE BOOL "extra verbosity")
 endif()
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)

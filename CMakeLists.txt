@@ -1,7 +1,8 @@
 cmake_minimum_required (VERSION 3.13)
 
 option(SKIP_CONAN_PACKAGE "skip conan package generation" OFF)
-option(BUILD_TEST         "build test suite" 			   ON)
+option(BUILD_TEST         "build test suite" 			         ON)
+option(EXTRA_TOOLING      "enable include-what-you-use"    ON)
 
 set(PROJECT_HOME "${CMAKE_CURRENT_LIST_DIR}")
 set(PROJECT_NAME meta CACHE STRING "" FORCE)
@@ -46,11 +47,16 @@ PROJECT(
 
 set(GTEST_VERS  "1.8.1" )
 set(BOOST_VERS "1.72.0" )
+set(IWYU_VERS  "0.15.0" )
 
 set(PACKAGES
    gtest
 	 boost
 )
+
+if (EXTRA_TOOLING)
+	set(PACKAGES ${PACKAGES} iwyu)
+endif()
 
 message(STATUS "package list has been set to ${PACKAGES}")
 
@@ -64,7 +70,27 @@ load_packages(
 	UPDATE
 )
 
-message(DEBUG "CONAN_LIBS set to ${CONAN_LIBS}")
+if (EXTRA_TOOLING)
+
+	# TODO: setup_iwyu(PATH ${CONAN_BIN_DIRS_IWYU} OPTIONS any)
+
+	# add iwyu support
+	message(DEBUG "looking for iwyu in folder ${CONAN_BIN_DIRS_IWYU}")
+
+	find_program(iwyu NAMES include-what-you-use HINTS ${CONAN_BIN_DIRS_IWYU} REQUIRED)
+
+	if(NOT iwyu)
+		message(WARNING "cannot find iwyu in path ${CONAN_BIN_DIRS_IWYU}")
+	else()
+		message(STATUS "iwyu found in path ${CONAN_BIN_DIRS_IWYU}")
+	endif()
+
+	list(APPEND iwyu -Xiwyu;any)
+
+	# for some reason, we need to add up this -> set in the conan package
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I/opt/clang11/lib/clang/11.0.0/include")
+
+endif()
 
 #####################################
 #          add the sources          #

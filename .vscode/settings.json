@@ -8,8 +8,10 @@
         "CONAN_BIN_PATH": "/opt/miniconda/envs/py38/bin",
         "CONAN_CHANNEL": "stable",
         "CONAN_USERNAME": "jvermosen",
-        "CMAKE_VERBOSE": true
+        "EXTRA_TOOLING": true,
+        "VERBOSE": true
     },
+    "cmake.generator": "Unix Makefiles",
     "cmake.environment": {
       "PATH": "/opt/miniconda/envs/py38/bin:${env:PATH}"
     },

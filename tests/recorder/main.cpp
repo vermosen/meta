@@ -2,9 +2,9 @@
 #include <chrono>
 #include <thread>
 
-#include <gtest/gtest.h>
+#include <gtest/gtest.h> // IWYU pragma: keep
 
-#include <meta/clocks/metrics/all.h>
+#include <meta/clocks/metrics/all.h> // IWYU pragma: keep
 #include <meta/clocks/recorder.h>
 #include <meta/clocks/cpu.h>
 

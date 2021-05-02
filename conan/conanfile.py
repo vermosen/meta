@@ -37,11 +37,13 @@ class metaConan(ConanFile):
         if self.settings.compiler == 'gcc':
             if self.settings.compiler.version in ['8', '8.4']:
                 cmake.definitions["CONAN_PROFILE"] = 'gcc84'
+
             elif self.settings.compiler.version in ['9', '9.3']:
                 cmake.definitions["CONAN_PROFILE"] = 'gcc93'
             else:
                 self.output.error('compiler %s %s not supported' % 
                   (self.settings.compiler, self.settings.compiler.version))
+                  
         elif self.settings.compiler == 'clang':
             if self.settings.compiler.version in ['11.0']:
                 cmake.definitions["CONAN_PROFILE"] = 'clang11'
@@ -112,8 +114,10 @@ class metaConan(ConanFile):
                 for f in self.cmake_files:
                     self.copy("%s" % f, src=self.build_folder, keep_path=False)
 
+            except FileNotFoundError as ex:
+                self.output.warn('file not found error: %s' % ex)
             except:
-                self.output.error('failed to parse cmake install files: %s' % sys.exc_info()[0])
+                self.output.warn('failed to parse cmake install files: %s' % sys.exc_info()[0])
 
     def package_info(self):
         self.cpp_info.includedirs = ['include']

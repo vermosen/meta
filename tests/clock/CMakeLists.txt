@@ -20,7 +20,9 @@ target_link_libraries(
 	Threads::Threads
 )
 
-#will save the asm in top cmake folder
-#set_target_properties(${TARGET_NAME} PROPERTIES COMPILE_FLAGS "-save-temps -fverbose-asm") 
+if (${EXTRA_TOOLING})
+    message(STATUS "using iwyu from ${iwyu}")
+    set_target_properties(${TARGET_NAME} PROPERTIES CXX_INCLUDE_WHAT_YOU_USE ${iwyu})
+endif()
 
 add_gtest(TARGET ${TARGET_NAME} BINARY ${TARGET_NAME})
