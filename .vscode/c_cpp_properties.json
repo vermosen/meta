@@ -5,6 +5,7 @@
           "includePath": [
               "${default}",
               "/home/vermosen/.conan/data/gtest/1.8.1/jvermosen/stable/package/6cce25ba4c100bc627e64bf86d8b3c8181e4f200/include",
+              "/home/vermosen/.conan/data/boost/1.76.0/jvermosen/stable/package/9a882a4925fbe80f76a0651673c03b8f907fe060/include",
               "${workspaceFolder}/src"
           ],
           "defines": [],

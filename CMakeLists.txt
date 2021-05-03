@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.13)
 
 option(SKIP_CONAN_PACKAGE "skip conan package generation" OFF)
 option(BUILD_TEST         "build test suite" 			         ON)
-option(EXTRA_TOOLING      "enable include-what-you-use"    ON)
+option(LLVM_TOOLING      "enable include-what-you-use"    OFF)
 
 set(PROJECT_HOME "${CMAKE_CURRENT_LIST_DIR}")
 set(PROJECT_NAME meta CACHE STRING "" FORCE)
@@ -46,7 +46,7 @@ PROJECT(
 ##############################
 
 set(GTEST_VERS  "1.8.1" )
-set(BOOST_VERS "1.72.0" )
+set(BOOST_VERS "1.76.0" )
 set(IWYU_VERS  "0.15.0" )
 
 set(PACKAGES
@@ -54,7 +54,7 @@ set(PACKAGES
 	 boost
 )
 
-if (EXTRA_TOOLING)
+if (LLVM_TOOLING)
 	set(PACKAGES ${PACKAGES} iwyu)
 endif()
 
@@ -70,7 +70,7 @@ load_packages(
 	UPDATE
 )
 
-if (EXTRA_TOOLING)
+if (LLVM_TOOLING)
 
 	# TODO: setup_iwyu(PATH ${CONAN_BIN_DIRS_IWYU} OPTIONS any)
 

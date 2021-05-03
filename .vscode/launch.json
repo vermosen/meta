@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) test-recorder",
+            "name": "(gdb) test-bundle",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Debug/bin/test-recorder",
+            "program": "${workspaceFolder}/Debug/bin/test-bundle",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
